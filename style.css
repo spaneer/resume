@@ -1,0 +1,80 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+body::before {
+  content: "© Sridharan Panneer";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 5rem;
+  color: rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.dark-mode::before {
+  color: rgba(255, 255, 255, 0.05);
+}
+
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  padding: 30px;
+  text-align: center;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+}
+
+.title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --header-bg: #f0f0f0;
+  --header-text: #000000;
+  --footer-bg: #f0f0f0;
+  --footer-text: #000000;
+}
+
+.dark-mode {
+  --bg: #121212;
+  --text: #f1f1f1;
+  --header-bg: #1e1e1e;
+  --header-text: #ffffff;
+  --footer-bg: #1e1e1e;
+  --footer-text: #ffffff;
+}
